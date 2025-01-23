@@ -8,7 +8,7 @@ def solve(a, b, c):
 
 def parse(sentence: str):
     # Clean up the sentence
-    sentence = sentence.replace("-", "+-").replace(" ", "").replace("x^2", "").replace("x", "").split('+')
+    sentence = sentence.lower().replace("-", "+-").replace(" ", "").replace("x^2", "").replace("x", "").split('+')
     # or 0 is basically Falsy check
     a = int(sentence[0]) or 0
     b = int(sentence[1]) or 0
