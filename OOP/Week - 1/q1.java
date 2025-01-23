@@ -3,12 +3,12 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter hours worked: ");
         int hoursWorked = sc.nextInt();
         System.out.print("Enter hourly rate: ");
-        int hourlyRate  = sc.nextInt();
+        int hourlyRate = sc.nextInt();
 
         int salary;
         if (hoursWorked > 40) {
