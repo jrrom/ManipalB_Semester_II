@@ -22,7 +22,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter number of spaces to swap: ");
+        System.out.print("Enter number of steps: ");
         int steps = sc.nextInt();
 
         System.out.print("Enter (1) for left rotate, (2) for right rotate: ");
