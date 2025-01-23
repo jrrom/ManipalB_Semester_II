@@ -1,19 +1,19 @@
 import java.util.Scanner;
 
 class Main {
-    static int[] rotateRight(int[] n, int swap) {
+    static int[] rotateRight(int[] n, int steps) {
         int[] temp = new int[n.length];
         for (int i = 0; i < n.length; i++) {
-            temp[(i + swap) % n.length] = n[i];
+            temp[(i + steps) % n.length] = n[i];
         }
 
         return temp;
     }
 
-    static int[] rotateLeft(int[] n, int swap) {
+    static int[] rotateLeft(int[] n, int steps) {
         int[] temp = new int[n.length];
         for (int i = 0; i < n.length; i++) {
-            temp[(i - swap + n.length) % n.length] = n[i];
+            temp[(i - steps + n.length) % n.length] = n[i];
         }
 
         return temp;
@@ -23,7 +23,7 @@ class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter number of spaces to swap: ");
-        int swap = sc.nextInt();
+        int steps = sc.nextInt();
 
         System.out.print("Enter (1) for left rotate, (2) for right rotate: ");
         int type = sc.nextInt();
@@ -40,10 +40,10 @@ class Main {
         int[] finalArray = new int[size];
         switch (type) {
             case 1:
-                finalArray = rotateLeft(nums, swap);
+                finalArray = rotateLeft(nums, steps);
                 break;
             case 2:
-                finalArray = rotateRight(nums, swap);
+                finalArray = rotateRight(nums, steps);
                 break;
             default:
                 System.out.println("Error: Invalid input for type of rotation.");
