@@ -2,7 +2,7 @@ import math
 
 while True:
     num = input("Enter number or enter 'q' to quit: ")
-    if num == 'q' or not num.isnumeric:
+    if num == 'q' or not num.isnumeric():
         break;
 
     num = int(num)
