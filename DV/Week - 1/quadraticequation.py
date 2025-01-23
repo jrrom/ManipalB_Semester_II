@@ -6,33 +6,15 @@ def solve(a, b, c):
     r2 = (-b - cmath.sqrt(d)) / (2 * a)
     return r1, r2
 
-def parse(sentence):
-    a = 0
-    b = 0
-    c = 0
-    
+def parse(sentence: str):
     # Clean up the sentence
-    sentence = sentence.replace(" ", "").lower()
-    
-    # Extract coefficient of x2
-    if 'x2' in sentence:
-        parts = sentence.split('x2')
-        part1 = parts[0]
-        a = int(part1) if part1 not in ('', '+', '-') else int(part1 + '1')
-        sentence = parts[1]
-    
-    # Extract coefficient of x
-    if 'x' in sentence:
-        parts = sentence.split('x')
-        part2 = parts[0]
-        b = int(part2) if part2 not in ('', '+', '-') else int(part2 + '1')
-        sentence = parts[1]
-    
-    # The remaining part is the constant term
-    c = int(sentence) if sentence else 0
-
+    sentence = sentence.replace("-", "+-").replace(" ", "").replace("x^2", "").replace("x", "").split('+')
+    # or 0 is basically Falsy check
+    a = int(sentence[0]) or 0
+    b = int(sentence[1]) or 0
+    c = int(sentence[2]) or 0
     return a, b, c
-
+    
 sentence = input("Enter a quadratic equation in the from ax2 + bx + c:\n")
 a, b, c = parse(sentence)
 print("The inputs are", a, b, c)
