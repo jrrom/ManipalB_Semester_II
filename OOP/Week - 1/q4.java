@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Main {
+public class Main {
     static int[] rotateRight(int[] n, int steps) {
         int[] temp = new int[n.length];
         for (int i = 0; i < n.length; i++) {
