@@ -1,17 +1,3 @@
-d = {}
-sentence = input("Enter a sentence: ")
-for word in sentence.replace(".", "").replace(",", "").split(" "):
-    if word == '':
-        continue
-    
-    if word not in d:
-        d[word] = 1
-    else:
-        d[word] += 1
-print("The frequency of each word is: ")
-for word in d:
-    print(word, "appears", d[word], "times")
-
 # First
 rows = int(input("Enter rows: "))
 
@@ -25,12 +11,12 @@ for i in range(1, rows + 1):
 
     print()
 
-Enter rows: 5
-    o 
-   o o 
-  o o o 
-   o o 
-    o 
+# Enter rows: 5
+#     o 
+#    o o 
+#   o o o 
+#    o o 
+#     o 
 
 # Second
 rows = int(input("Enter rows: "))
@@ -40,12 +26,12 @@ for i in range(1, rows + 1):
         print(j, end=" ")
     print()
 
-Enter rows: 5
-1 
-1 2 
-1 2 3 
-1 2 3 4 
-1 2 3 4 5 
+# Enter rows: 5
+# 1 
+# 1 2 
+# 1 2 3 
+# 1 2 3 4 
+# 1 2 3 4 5 
 
 # Third
 rows = int(input("Enter rows: "))
@@ -57,8 +43,8 @@ for i in range(1, rows + 1):
         count += 1
     print()
 
-Enter rows: 4
-1	
-2	3	
-4	5	6	
-7	8	9	10	
+# Enter rows: 4
+# 1	
+# 2	3	
+# 4	5	6	
+# 7	8	9	10	
