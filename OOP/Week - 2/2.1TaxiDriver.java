@@ -8,6 +8,7 @@ public class Main {
 		double distance = 0;
         if (cost > 295) {
         	System.out.println("Undefined");
+         System.exit(0);
         }
         
         if (cost <= 50) {
