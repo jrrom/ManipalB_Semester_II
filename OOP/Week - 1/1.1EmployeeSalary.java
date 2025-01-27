@@ -18,5 +18,6 @@ public class Main {
         }
 
         System.out.println("The salary is " + salary);
+        sc.close();
     }
 }
