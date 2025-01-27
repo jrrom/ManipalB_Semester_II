@@ -39,6 +39,7 @@ public class Main {
             total += product.quantity * product.price;
         }
         System.out.println("You spent " + total);
+        sc.close();
     }
 
 }
