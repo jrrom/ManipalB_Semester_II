@@ -25,6 +25,6 @@ public class Main {
         int sum = n1;
 
         System.out.println("The sum is " + sum);
+        sc.close();
     }
-
 }
