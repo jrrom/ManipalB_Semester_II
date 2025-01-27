@@ -54,5 +54,6 @@ public class Main {
         for (int num : finalArray) {
             System.out.print(num + " ");
         }
+        sc.close();
     }
 }
