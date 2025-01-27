@@ -1,5 +1,3 @@
-//Incorrect, we need to do the other diagonal also
-
 import java.util.Scanner;
 
 public class Main {
@@ -22,7 +20,7 @@ public class Main {
 		int sum = 0;
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
-				if (i != j) {
+				if (i != j && i + j != size - 1) {
 					System.out.print(square[i][j] + " ");
 					sum += square[i][j];
 				}
