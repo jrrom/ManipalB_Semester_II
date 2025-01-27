@@ -1,3 +1,5 @@
+//Incorrect, we need to do the other diagonal also
+
 import java.util.Scanner;
 
 public class Main {
