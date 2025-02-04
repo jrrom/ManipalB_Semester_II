@@ -66,7 +66,7 @@ class Mixer {
     }
 }
 
-public class scratch_8 {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Mixer m1 = new Mixer();
