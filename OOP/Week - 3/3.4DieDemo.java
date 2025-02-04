@@ -26,4 +26,4 @@ public class Main {
 
         System.out.println("The sum is " + (die1.getSideUp() + die2.getSideUp()));
     }
-;}
+}
