@@ -9,11 +9,11 @@ class Mixer {
         int n = sc.nextInt();
         this.arr = new int[n];
 
-        System.out.println("Enter elements: ");
+        System.out.println("Enter elements in ascending order (no duplicates): ");
         for (int i = 0; i < n; i++) {
             this.arr[i] = sc.nextInt();
             if (i > 0 && this.arr[i] <= this.arr[i - 1]) {
-                System.out.println("The array must be ascending order and cannot contain duplicates.");
+                System.out.println("The array must be in ascending order and contain no duplicates.");
                 System.exit(1);
             }
         }
@@ -29,18 +29,18 @@ class Mixer {
 
     public Mixer mix(Mixer A) {
         Mixer result = new Mixer();
-        int totalLength = A.arr.length + this.arr.length;
-
+        int totalLength = this.arr.length + A.arr.length;
         result.arr = new int[totalLength];
 
         int i = 0, j = 0, k = 0;
         while (i < this.arr.length && j < A.arr.length) {
             if (this.arr[i] < A.arr[j]) {
                 result.arr[k++] = this.arr[i++];
-            } else if (this.arr[i] == A.arr[j]){
-                j++;
-            } else {
+            } else if (this.arr[i] > A.arr[j]) {
                 result.arr[k++] = A.arr[j++];
+            } else {  // Equal elements, add only one and skip both
+                result.arr[k++] = this.arr[i++];
+                j++;
             }
         }
 
@@ -54,13 +54,8 @@ class Mixer {
             result.arr[k++] = A.arr[j++];
         }
 
-        // To check for trailing zero
-        int real_length = result.arr.length;
-        while (result.arr[real_length - 1] == 0) {
-            real_length--;
-        }
-
-        result.arr = Arrays.copyOf(result.arr, real_length);
+        // Resize the array to actual used size (k elements)
+        result.arr = Arrays.copyOf(result.arr, k);
 
         return result;
     }
@@ -72,11 +67,13 @@ public class Main {
         Mixer m1 = new Mixer();
         m1.accept(sc);
         m1.display();
+
         Mixer m2 = new Mixer();
         m2.accept(sc);
         m2.display();
 
         Mixer m3 = m1.mix(m2);
+        System.out.println("Merged array:");
         m3.display();
 
         sc.close();
