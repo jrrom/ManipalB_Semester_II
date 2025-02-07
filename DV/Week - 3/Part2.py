@@ -18,7 +18,7 @@ det_a = np.linalg.det(a)
 print("Determinant of first matrix is: \n", np.linalg.det(a))
 
 det_b = np.linalg.det(b)
-print("Determinant of first matrix is: \n", np.linalg.det(b))
+print("Determinant of second matrix is: \n", np.linalg.det(b))
 
 if det_a != 0:
     print("Inverse of first matrix is: \n", np.linalg.inv(a))
