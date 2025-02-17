@@ -6,9 +6,7 @@ class Student {
 	int total;
 	int avgno;
 	
-	public void assign() {
-		Scanner sc = new Scanner(System.in);
-		
+	public void assign(Scanner sc) {
 		System.out.print("Enter name of the student: ");
 		this.sname = sc.nextLine();
 		System.out.print("Enter number of marks in student: ");
@@ -19,8 +17,6 @@ class Student {
 		for (int i = 0; i < n; i++) {
 			this.marks[i] = sc.nextInt();
 		}
-		
-		sc.close();
 	}
 	
 	public void display() {
@@ -47,10 +43,14 @@ class Student {
 
 public class Main {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
 		Student student = new Student();
-		student.assign();
+		student.assign(sc);
 		student.compute();
 		student.display();
+
+		sc.close();
 	}
 
 }
