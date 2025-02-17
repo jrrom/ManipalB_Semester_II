@@ -9,17 +9,13 @@ class Employee {
 	double IT;
 	double Net_Sal;
 	
-	public void read() {
-		Scanner sc = new Scanner(System.in);
-		
+	public void read(Scanner sc) {
 		System.out.print("Enter name: ");
 		this.Ename = sc.nextLine();
 		System.out.print("Enter id: ");
 		this.Eid = sc.nextInt();
 		System.out.print("Enter basic: ");
 		this.Basic = sc.nextDouble();
-		
-		sc.close();
 	}
 	
 	public void compute_net_sal() {
@@ -43,9 +39,13 @@ class Employee {
 
 public class Main {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
 		Employee employee = new Employee();
-		employee.read();
+		employee.read(sc);
 		employee.compute_net_sal();
 		employee.display();
+
+		sc.close();
 	}
 }
